@@ -23,3 +23,6 @@ inputSenha.addEventListener('input', () => {
     }
 })
 
+const entrar = () => {
+    window.location = "mentores.html"
+}
