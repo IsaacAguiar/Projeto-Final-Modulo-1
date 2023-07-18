@@ -24,5 +24,5 @@ inputSenha.addEventListener('input', () => {
 })
 
 const entrar = () => {
-    window.location = "../mentores.html"
+    window.location = "../Mentores/mentores.html"
 }

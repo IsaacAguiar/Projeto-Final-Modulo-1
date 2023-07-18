@@ -133,3 +133,78 @@ a {
     margin-left: 56em;
     border-radius: 12px;
 }
+
+.seta {
+    background-color: #d5d5d5;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    padding: 8px;
+    margin-top: 9em;
+    margin-left: -76em;
+}
+
+.mentor {
+    margin-top: 192px;
+    margin-left: 6px;
+}
+
+.containerNovoMentor {
+    width: 83vw;
+    height: 32vh;
+    padding: 1.5em;
+    margin-left: -101em;
+    margin-top: 15.9em;
+    background-color: white;
+    border-radius: 24px;
+}
+
+.linha {
+    height: 1.5px;
+    width: 100%;
+    background: #BDBDBD;
+}
+
+.dados {
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    color: #482D83;
+    margin-bottom: 0.5em;
+}
+
+.formulario {
+    margin-top: 2em;
+}
+
+.tituloLabel {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    color: #757575;
+}
+
+.inputMentor {
+    width: 400px;
+    height: 56px;
+    border-radius: 16px;
+    border: 1px solid var(--cinzas-cinza-300, #E0E0E0);
+    background: var(--branco, #FFF);
+}
+
+.novoMentorDados {
+    margin-left: 2em;
+}
+
+.salvar {
+    width: 400px;
+    padding: 12px 64px;
+    margin-top: 2em;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    font-size: 20px;
+    background-color: #482D83;
+    border: 0px solid;
+    border-radius: 16px;
+}
