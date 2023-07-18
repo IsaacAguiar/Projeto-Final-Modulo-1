@@ -188,6 +188,7 @@ a {
     width: 400px;
     height: 56px;
     border-radius: 16px;
+    padding: 1em;
     border: 1px solid var(--cinzas-cinza-300, #E0E0E0);
     background: var(--branco, #FFF);
 }
@@ -207,4 +208,51 @@ a {
     background-color: #482D83;
     border: 0px solid;
     border-radius: 16px;
+}
+
+table {
+    width: 1530px;
+    border-collapse: collapse;
+    margin-left: -1557px;
+    text-align: center;
+    margin-top: 8em;
+}
+
+thead {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    color: white;
+    height: 66px;
+    background: var(--primria-roxo-escuro, #482D83);
+}
+
+td {
+    height: 60px;
+}
+
+.pontaComeco {
+    border-radius: 16px 0px 0px 0px;
+}
+
+.pontaFinal {
+    border-radius: 0px 16px 0px 0px;
+}
+
+tr:nth-child(even) {
+    background-color: #E0E0E0;
+}
+
+tbody tr:hover {
+    background-color: #bdbdbd;
+}
+
+.botoesFormulario {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    padding: 3px;
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 50%;
 }
