@@ -1,28 +1,51 @@
-const labelEmail = document.getElementById('emailLabel')
-const inputEmail = document.getElementById('emailInput') 
-const labelSenha = document.getElementById('senhaLabel')
-const inputSenha = document.getElementById('senhaInput')
+const rotuloEmail = document.getElementById('rotuloEmail')
+const entradaEmail = document.getElementById('entradaEmail') 
+const rotuloSenha = document.getElementById('rotuloSenha')
+const entradaSenha = document.getElementById('entradaSenha')
+const mensagemErroEmail = document.getElementById('mensagemErroEmail');
+const mensagemErroSenha = document.getElementById('mensagemErroSenha');
 
-inputEmail.addEventListener('input', () => {
-    if (inputEmail.value !== "") {
-        labelEmail.style.color = "rgba(0, 194, 71, 1)";
-        inputEmail.style.border = "1px solid rgba(0, 194, 71, 1)";
-      } else {
-        labelEmail.style.color = ""; 
-        inputEmail.style.border = "";
-      }
+entradaEmail.addEventListener('input', () => {
+    if (entradaEmail.value !== "") {
+        rotuloEmail.style.color = "rgba(0, 194, 71, 1)";
+        entradaEmail.style.border = "1px solid rgba(0, 194, 71, 1)";
+        mensagemErroEmail.style.display = "none"; 
+    } else {
+        rotuloEmail.style.color = ""; 
+        entradaEmail.style.border = "";
+        mensagemErroEmail.style.display = "block"; 
+    }
 });
 
-inputSenha.addEventListener('input', () => {
-    if (inputSenha.value !== "") {
-        labelSenha.style.color = "rgba(0, 194, 71, 1)";
-        inputSenha.style.border = "1px solid rgba(0, 194, 71, 1)"
+entradaSenha.addEventListener('input', () => {
+    if (entradaSenha.value !== "") {
+        rotuloSenha.style.color = "rgba(0, 194, 71, 1)";
+        entradaSenha.style.border = "1px solid rgba(0, 194, 71, 1)";
+        mensagemErroSenha.style.display = "none"; 
     } else {
-        labelSenha.style.color = "";
-        inputSenha.style.border = "";
+        rotuloSenha.style.color = "";
+        entradaSenha.style.border = "";
+        mensagemErroSenha.style.display = "block"; 
     }
-})
+});
 
 const entrar = () => {
-    window.location = "../Mentores/mentores.html"
+    const email = entradaEmail.value.trim();
+    const senha = entradaSenha.value.trim();
+    
+    if (email === "") {
+        mensagemErroEmail.style.display = "block";
+    } else {
+        mensagemErroEmail.style.display = "none";
+    }
+    
+    if (senha === "") {
+        mensagemErroSenha.style.display = "block"; 
+    } else {
+        mensagemErroSenha.style.display = "none"; 
+    }
+    
+    if (email !== "" && senha !== "") {
+        window.location = "../Mentores/mentores.html";
+    }
 }

@@ -4,7 +4,7 @@ const novoMentor = () => {
 
 const mostrarMentores = (mentores) => {
     const tabelaCorpo = document.getElementById('tabelaCorpo');
-    tabelaCorpo.innerHTML = ''; // Limpa o conteúdo da tabela antes de atualizar
+    tabelaCorpo.innerHTML = ''; 
 
     mentores.forEach((mentor) => {
         const mentorHtml = `
@@ -25,7 +25,7 @@ const mostrarMentores = (mentores) => {
             </tr>
         `;
 
-        tabelaCorpo.innerHTML += mentorHtml; // Adiciona o novo mentor à tabela
+        tabelaCorpo.innerHTML += mentorHtml; 
     });
 };
 
@@ -48,4 +48,27 @@ const excluirMentor = async (id) => {
     pegarMentores()
 }
 
-pegarMentores();
+const buscarMentores = async () => {
+    const entrada = document.getElementById("barradePesquisa");
+    const consulta = entrada.value.toLowerCase();
+
+    try {
+      const respostaApi = await fetch("http://localhost:3000/Mentores");
+      const mentores = await respostaApi.json();
+
+      const mentoresFiltrados = mentores.filter(
+        (mentor) =>
+          mentor.nome.toLowerCase().includes(consulta) ||
+          mentor.email.toLowerCase().includes(consulta)
+      );
+
+      mostrarMentores(mentoresFiltrados);
+    } catch (erro) {
+      console.error("Erro ao buscar mentores:", erro);
+    }
+  };
+
+  const elementoInput = document.getElementById("barradePesquisa");
+  elementoInput.addEventListener("input", buscarMentores);
+
+  pegarMentores();
