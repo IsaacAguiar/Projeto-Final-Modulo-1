@@ -25,7 +25,7 @@
 }
 
 .icone {
-    background-color: rgba(105, 80, 161, 1);
+    background-color: rgba(72, 45, 131, 1);
     width: 55px;
     height: 55px;
     padding-top: 3px;
@@ -72,6 +72,9 @@
     margin-left: -10em;
     background-color: white;
     border-radius: 24px;
+    -webkit-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.2);
 }
 
 .lista {
@@ -129,7 +132,7 @@ a {
     padding: 1em;
 }
 
-.novoMentor {
+.novo {
     background-color: #00C247;
     color: white;
     font-size: 18px;
@@ -141,7 +144,7 @@ a {
     border-radius: 12px;
 }
 
-.novoMentor:hover{
+.novo:hover{
     background-color: #00c247cc;
     border-radius: 12px;
 }
@@ -169,6 +172,9 @@ a {
     margin-top: 15.9em;
     background-color: white;
     border-radius: 24px;
+    -webkit-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.2);
 }
 
 .linha {
@@ -242,7 +248,7 @@ thead {
     font-weight: 400;
     color: white;
     height: 66px;
-    background: var(--primria-roxo-escuro, #482D83);
+    background-color: rgba(72, 45, 131, 1);;
 }
 
 td {
@@ -273,4 +279,94 @@ tbody tr:hover {
     background-color: #FFFFFF;
     border: 1px solid #E0E0E0;
     border-radius: 50%;
+}
+
+.status {
+    width: 90px;
+}
+
+.status-ativo {
+    background-color: #bfffd5;
+    color: #00ac3f;
+    width: 94px;
+    height: 44px;
+    padding: 10px;
+    border: 0px solid;
+    border-radius: 8px;
+}
+
+.status-inativo {
+    background-color: #FFE1E1;
+    color: #FF3333;
+    width: 94px;
+    height: 44px;
+    padding: 10px;
+    border: 0px solid;
+    border-radius: 8px;
+}
+
+/* Adicione este CSS personalizado */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #FF3333;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #00C247;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #00C247;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.espaco {
+    margin-top: 1em;
 }
