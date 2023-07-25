@@ -1,6 +1,6 @@
 const setaVoltar = () => {
     window.location = "./mentorias.html";
-};
+}
 
 const formulario = document.getElementById("formulario");
 const mentorSelect = document.getElementById("mentor");
@@ -9,7 +9,7 @@ const buscarMentores = async () => {
     const resposta = await fetch("http://localhost:3000/Mentores");
     const mentores = await resposta.json();
     return mentores;
-};
+}
 
 const cadastrarMentoria = async (mentoria) => {
     await fetch("http://localhost:3000/Mentorias", {
@@ -21,7 +21,7 @@ const cadastrarMentoria = async (mentoria) => {
         body: JSON.stringify(mentoria)
     });
     window.location = "./mentorias.html";
-};
+}
 
 const popularSelectMentores = async () => {
     const mentores = await buscarMentores();
@@ -32,7 +32,7 @@ const popularSelectMentores = async () => {
         option.textContent = mentor.nome;
         mentorSelect.appendChild(option);
     });
-};
+}
 
 formulario.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -59,6 +59,6 @@ formulario.addEventListener("submit", async (e) => {
     };
 
     cadastrarMentoria(mentoriaNova);
-});
+})
 
 popularSelectMentores();

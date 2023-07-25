@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novo Mentor</title>
+    <title>Editar Mentoria</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <link href="../Assets/estilos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script src="./novaMentoria.js" defer></script>
+    <script src="./editarMentoria.js" defer></script>
 </head>
 
 <body class="d-flex" style="background-color: whitesmoke;">
@@ -35,7 +35,7 @@
 
     <div class="d-flex" onclick="setaVoltar()">
         <i class="fas fa-arrow-left fa-lg seta"></i> 
-        <h3 class="mentor">Nova Mentoria</h3>
+        <h3 class="mentor">Mentoria</h3>
     </div>
 
     <div class="containerNovoMentor d-flex flex-column" style="height: 41vh;">
@@ -45,17 +45,17 @@
 
             <form class="d-flex flex-row" id="formulario">
 
-            <div class="d-flex flex-column">
-                <label for="titulo" class="tituloLabel">Titulo da Mentoria:</label>
-                <input class="inputMentor" type="text" id="titulo" name="titulo" required>
-            </div>
+                <div class="d-flex flex-column">
+                    <label for="titulo" class="tituloLabel">Titulo da Mentoria:</label>
+                    <input class="inputMentor" type="text" id="titulo" name="titulo">
+                </div>
 
-            <div class="d-flex flex-column novoMentorDados">
-                <label for="mentor" class="tituloLabel">Mentor:</label>
-                <select class="inputMentor" id="mentor" name="mentor" required>
-                    <option value="" disabled selected>Selecione um Mentor</option>
-                </select>
-            </div>
+                <div class="d-flex flex-column novoMentorDados">
+                    <label for="mentor" class="tituloLabel">Mentor:</label>
+                    <select class="inputMentor" id="mentor" name="mentor">
+                        <option value="" disabled selected>Selecione um Mentor</option>
+                    </select>
+                </div>
         </div>
 
         <div class="d-flex flex-column espaco">

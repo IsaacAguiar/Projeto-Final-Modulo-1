@@ -8,14 +8,12 @@ const recuperarId = () => {
     const parametros = window.location.search
     const parametrosObjeto = new URLSearchParams(parametros)
     const id = parametrosObjeto.get('id')
-
     return id
 }
 
 const buscarMentor = async (id) => {
     const resultado = await fetch(`http://localhost:3000/mentores/${id}`)
     const mentor = await resultado.json()
-
     return mentor
 }
 
