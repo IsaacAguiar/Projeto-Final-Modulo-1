@@ -177,9 +177,22 @@ a {
     box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.2);
 }
 
+.containerNovaMentoria {
+    width: 83vw;
+    height: 65vh;
+    padding: 1.5em;
+    margin-left: -101em;
+    margin-top: 15.9em;
+    background-color: white;
+    border-radius: 24px;
+    -webkit-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.2);
+}
+
 .linha {
-    height: 1.5px;
-    width: 100%;
+    height: 2px;
+    width: 1545px;
     background: #BDBDBD;
 }
 
@@ -204,6 +217,15 @@ a {
 
 .inputMentor {
     width: 400px;
+    height: 56px;
+    border-radius: 16px;
+    padding: 1em;
+    border: 1px solid var(--cinzas-cinza-300, #E0E0E0);
+    background: var(--branco, #FFF);
+}
+
+.inputMentoria {
+    width: 250px;
     height: 56px;
     border-radius: 16px;
     padding: 1em;
@@ -368,4 +390,16 @@ input:checked + .slider:before {
 
 .espaco {
     margin-top: 1em;
+}
+
+.turmas {
+    margin-left: -7em;
+}
+
+.espaços {
+    margin-left: 2em;
+}
+
+.topoEspaço {
+    margin-top: 2em;
 }
