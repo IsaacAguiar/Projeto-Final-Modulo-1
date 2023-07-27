@@ -56,29 +56,19 @@ const pegarTurmas = async () => {
     }
 };
 
-// Função para buscar turmas/mentorias com base na palavra-chave digitada
 const buscarTurmas = async () => {
     const entrada = document.getElementById("barradePesquisa");
     const consulta = entrada.value.toLowerCase();
 
     try {
-      const respostaApi = await fetch("http://localhost:3000/Turmas");
-      const turmas = await respostaApi.json();
-
-      const turmasFiltradas = turmas.filter(
-        (turma) =>
-          turma.turma.toLowerCase().includes(consulta) ||
-          turma.mentor.toLowerCase().includes(consulta) ||
-          turma.mentoria.toLowerCase().includes(consulta)
-      );
-
-      mostrarTurmas(turmasFiltradas);
+        const apiResponse = await fetch(`http://localhost:3000/Turmas?turma_like=${consulta}`);
+        const turmasFiltradas = await apiResponse.json();
+        mostrarTurmas(turmasFiltradas);
     } catch (erro) {
-      console.error("Erro ao buscar turmas:", erro);
+        console.error("Erro ao buscar turmas:", erro);
     }
 };
 
-// Adiciona o evento de input para a barra de pesquisa
 const elementoInput = document.getElementById("barradePesquisa");
 elementoInput.addEventListener("input", buscarTurmas);
 
