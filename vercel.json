@@ -1,16 +1,9 @@
 {
-    "routes": [
+    "rewrites": [
       {
-        "src": "/Json/db.json",
-        "dest": "/Json/db.json"
-      },
-      {
-        "src": "/Tela%20de%20Login/(.*)",
-        "dest": "/Tela%20de%20Login/$1"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "/Tela%20de%20Login/index.html"
+        "source": "/",
+        "destination": "/Tela de Login/index.html"
       }
     ]
-}  
+  }
+  
