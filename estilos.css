@@ -1,0 +1,63 @@
+.formularios {
+    width: 500px;
+    margin: 12em auto;
+    padding: 3em;
+    background-color: white;
+    border: 0px solid;
+    border-radius: 14px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.35);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.35);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.35);
+}
+
+.botao {
+    border: 0px solid;
+    border-radius: 16px;
+    background: var(--primria-roxo-escuro, #482D83);
+    width: 400px;
+    height: 56px;
+    font-size: 22px;
+    color: white;
+}  
+
+.bemVindo {
+    margin-bottom: 3px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: 0.2px;
+}
+
+.login {
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    margin-bottom: 1.5em;
+}
+
+.senha {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 150%;
+    letter-spacing: 0.2px;
+}
+
+.form-label {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: 0.2px;
+}
+
+.form-input {
+    height: 50px;
+    padding: 1em;
+    border-radius: 12px;
+    border: 1px solid var(--cinzas-cinza-300, #E0E0E0);
+    background: var(--branco, #FFF);
+    margin-bottom: 1.4em;
+}
