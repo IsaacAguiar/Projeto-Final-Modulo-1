@@ -35,7 +35,7 @@ const mostrarAlunos = (alunos) => {
 
 const pegarAlunos = async () => {
     try {
-        const apiResponse = await fetch("http://localhost:3000/Alunos");
+        const apiResponse = await fetch("https://api-projetofinal-md1.onrender.com/Alunos");
         const alunos = await apiResponse.json();
         mostrarAlunos(alunos);
     } catch (error) {
@@ -44,7 +44,7 @@ const pegarAlunos = async () => {
 }
 
 const excluirAluno = async (id) => {
-    await fetch(`http://localhost:3000/Alunos/${id}`, { method: "DELETE" });
+    await fetch(`https://api-projetofinal-md1.onrender.com/Alunos/${id}`, { method: "DELETE" });
     pegarAlunos();
 }
 
@@ -53,7 +53,7 @@ const buscarAlunos = async () => {
     const consulta = entrada.value.toLowerCase();
 
     try {
-        const apiResponse = await fetch(`http://localhost:3000/Alunos?nomeAluno_like=${consulta}`);
+        const apiResponse = await fetch(`https://api-projetofinal-md1.onrender.com/Alunos?nomeAluno_like=${consulta}`);
         const alunosFiltrados = await apiResponse.json();
         mostrarAlunos(alunosFiltrados);
     } catch (erro) {

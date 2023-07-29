@@ -38,7 +38,7 @@ const mostrarMentorias = (mentorias) => {
 
 const pegarMentorias = async () => {
     try {
-        const apiResponse = await fetch('http://localhost:3000/Mentorias');
+        const apiResponse = await fetch('https://api-projetofinal-md1.onrender.com/Mentorias');
         const mentorias = await apiResponse.json();
         mostrarMentorias(mentorias);
     } catch (error) {
@@ -47,7 +47,7 @@ const pegarMentorias = async () => {
 };
 
 const excluirMentoria = async (id) => {
-    await fetch(`http://localhost:3000/Mentorias/${id}`, { method: 'DELETE' })
+    await fetch(`https://api-projetofinal-md1.onrender.com/Mentorias/${id}`, { method: 'DELETE' })
     pegarMentorias()
 }
 
@@ -56,7 +56,7 @@ const buscarMentorias = async () => {
     const consulta = entrada.value.toLowerCase();
 
     try {
-      const respostaApi = await fetch("http://localhost:3000/Mentorias");
+      const respostaApi = await fetch("https://api-projetofinal-md1.onrender.com/Mentorias");
       const mentorias = await respostaApi.json();
 
       const mentoriasFiltradas = mentorias.filter(

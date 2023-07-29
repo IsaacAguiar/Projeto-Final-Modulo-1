@@ -7,7 +7,7 @@ const editarTurma = (turmaId) => {
 };
 
 const excluirTurma = async (id) => {
-    await fetch(`http://localhost:3000/Turmas/${id}`, { method: 'DELETE' });
+    await fetch(`https://api-projetofinal-md1.onrender.com/Turmas/${id}`, { method: 'DELETE' });
     pegarTurmas();
 };
 
@@ -48,7 +48,7 @@ const mostrarTurmas = (turmas) => {
 // Função para pegar as turmas/mentorias do servidor Json
 const pegarTurmas = async () => {
     try {
-        const apiResponse = await fetch('http://localhost:3000/Turmas');
+        const apiResponse = await fetch('https://api-projetofinal-md1.onrender.com/Turmas');
         const turmas = await apiResponse.json();
         mostrarTurmas(turmas);
     } catch (error) {
@@ -61,7 +61,7 @@ const buscarTurmas = async () => {
     const consulta = entrada.value.toLowerCase();
 
     try {
-        const apiResponse = await fetch(`http://localhost:3000/Turmas?turma_like=${consulta}`);
+        const apiResponse = await fetch(`https://api-projetofinal-md1.onrender.com/Turmas?turma_like=${consulta}`);
         const turmasFiltradas = await apiResponse.json();
         mostrarTurmas(turmasFiltradas);
     } catch (erro) {

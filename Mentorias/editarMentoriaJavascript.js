@@ -13,13 +13,13 @@ const recuperarId = () => {
 };
 
 const buscarMentoria = async (id) => {
-    const resultado = await fetch(`http://localhost:3000/Mentorias/${id}`);
+    const resultado = await fetch(`https://api-projetofinal-md1.onrender.com/Mentorias/${id}`);
     const mentoria = await resultado.json();
     return mentoria;
 };
 
 const buscarMentores = async () => {
-    const resultado = await fetch('http://localhost:3000/Mentores');
+    const resultado = await fetch('https://api-projetofinal-md1.onrender.com/Mentores');
     const mentores = await resultado.json();
 
     return mentores;
@@ -43,7 +43,7 @@ const carregarDadosFormulario = async (mentoria, mentores) => {
 };
 
 const editarMentoria = async (id, mentoria) => {
-    await fetch(`http://localhost:3000/Mentorias/${id}`, {
+    await fetch(`https://api-projetofinal-md1.onrender.com/Mentorias/${id}`, {
         method: 'PUT',
         headers: {
             'Accept': 'application/json, text/plain, */*',

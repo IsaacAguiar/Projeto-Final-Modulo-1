@@ -5,7 +5,7 @@ const setaVoltar = () => {
 const formulario = document.getElementById('formulario');
 
 const buscarTurmas = async () => {
-    const resposta = await fetch('http://localhost:3000/Turmas');
+    const resposta = await fetch('https://api-projetofinal-md1.onrender.com/Turmas');
     const turmas = await resposta.json();
     return turmas;
 };
@@ -23,7 +23,7 @@ const popularDropdownTurmas = (turmas) => {
 };
 
 const cadastrarAluno = async (aluno) => {
-    await fetch('http://localhost:3000/Alunos', {
+    await fetch('https://api-projetofinal-md1.onrender.com/Alunos', {
         method: 'POST',
         headers: {
             'Accept': 'application/json, text/plain, */*',

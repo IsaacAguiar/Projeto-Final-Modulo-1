@@ -12,7 +12,7 @@ const recuperarId = () => {
 }
 
 const buscarMentor = async (id) => {
-    const resultado = await fetch(`http://localhost:3000/mentores/${id}`)
+    const resultado = await fetch(`https://api-projetofinal-md1.onrender.com/mentores/${id}`)
     const mentor = await resultado.json()
     return mentor
 }
@@ -23,7 +23,7 @@ const carregarDadosFormulario = (mentor) => {
 }
 
 const editarMentor = async (id, mentor) => {
-    await fetch(`http://localhost:3000/mentores/${id}`, {
+    await fetch(`https://api-projetofinal-md1.onrender.com/mentores/${id}`, {
         method: 'PUT',
         headers: {
             'Accept': 'application/json, text/plain, */*',

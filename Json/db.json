@@ -6,7 +6,7 @@
       "id": 1
     },
     {
-      "nome": "DeuCertoAleluia",
+      "nome": "DeuCertoAleluiaa",
       "email": "sofrimentonacabamais@gmail.com",
       "id": 5
     },
@@ -28,12 +28,6 @@
       "mentor": "Mentor 3",
       "status": "Ativo",
       "id": 3
-    },
-    {
-      "titulo": "sla2",
-      "mentor": "DeuCertoAleluia",
-      "status": "Ativo",
-      "id": 5
     },
     {
       "titulo": "aleluia",

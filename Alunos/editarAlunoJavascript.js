@@ -12,7 +12,7 @@ const recuperarId = () => {
 };
 
 const buscarAluno = async (id) => {
-  const resultado = await fetch(`http://localhost:3000/Alunos/${id}`);
+  const resultado = await fetch(`https://api-projetofinal-md1.onrender.com/Alunos/${id}`);
   const aluno = await resultado.json();
   return aluno;
 };
@@ -23,7 +23,7 @@ const carregarDadosFormulario = (aluno) => {
 };
 
 const editarAluno = async (id, aluno) => {
-  await fetch(`http://localhost:3000/Alunos/${id}`, {
+  await fetch(`https://api-projetofinal-md1.onrender.com/Alunos/${id}`, {
     method: 'PUT',
     headers: {
       'Accept': 'application/json, text/plain, */*',
@@ -34,7 +34,7 @@ const editarAluno = async (id, aluno) => {
 };
 
 const buscarTurmas = async () => {
-  const resultado = await fetch('http://localhost:3000/Turmas');
+  const resultado = await fetch('https://api-projetofinal-md1.onrender.com/Turmas');
   const turmas = await resultado.json();
   return turmas;
 };

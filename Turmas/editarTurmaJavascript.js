@@ -14,7 +14,7 @@ const setaVoltar = () => {
   }
   
   const buscarTurma = async (id) => {
-    const resposta = await fetch(`http://localhost:3000/Turmas/${id}`);
+    const resposta = await fetch(`https://api-projetofinal-md1.onrender.com/Turmas/${id}`);
     const turma = await resposta.json();
   
     // Buscar a mentoria correspondente pelo título
@@ -28,13 +28,13 @@ const setaVoltar = () => {
   }
   
   const buscarMentores = async () => {
-    const resposta = await fetch('http://localhost:3000/Mentores');
+    const resposta = await fetch('https://api-projetofinal-md1.onrender.com/Mentores');
     const mentores = await resposta.json();
     return mentores;
   }
   
   const buscarMentorias = async () => {
-    const resposta = await fetch('http://localhost:3000/Mentorias');
+    const resposta = await fetch('https://api-projetofinal-md1.onrender.com/Mentorias');
     const mentorias = await resposta.json();
     return mentorias;
   }
@@ -113,7 +113,7 @@ const setaVoltar = () => {
   }
   
   const editarTurma = async (id, turma) => {
-    await fetch(`http://localhost:3000/Turmas/${id}`, {
+    await fetch(`https://api-projetofinal-md1.onrender.com/Turmas/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'

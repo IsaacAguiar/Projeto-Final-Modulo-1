@@ -5,13 +5,13 @@ const setaVoltar = () => {
 const formulario = document.getElementById('formulario')
 
 const buscarMentores = async () => {
-    const resposta = await fetch('http://localhost:3000/Mentores')
+    const resposta = await fetch('https://api-projetofinal-md1.onrender.com/Mentores')
     const mentores = await resposta.json()
     return mentores
 }
 
 const cadastrarMentor = async (mentor) => {
-    await fetch('http://localhost:3000/Mentores', {
+    await fetch('https://api-projetofinal-md1.onrender.com/Mentores', {
         method: 'POST',
         headers: {
             'Accept': 'application/json, text/plain, */*',

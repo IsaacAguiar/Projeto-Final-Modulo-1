@@ -3,7 +3,7 @@ const setaVoltar = () => {
 }
 
 function preencherMentorias() {
-    fetch('http://localhost:3000/Mentorias')
+    fetch('https://api-projetofinal-md1.onrender.com/Mentorias')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Resposta da rede não foi bem-sucedida');
@@ -24,7 +24,7 @@ function preencherMentorias() {
 }
 
 function preencherMentores() {
-    fetch('http://localhost:3000/Mentores')
+    fetch('https://api-projetofinal-md1.onrender.com/Mentores')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Resposta da rede não foi bem-sucedida');
@@ -60,7 +60,7 @@ document.getElementById('formulario').addEventListener('submit', function(event)
     delete formDataObj.horaInicio;
     delete formDataObj.horaFim;
 
-    fetch('http://localhost:3000/Turmas', {
+    fetch('https://api-projetofinal-md1.onrender.com/Turmas', {
         method: 'POST',
         headers: {
             "Accept": "application/json, text/plain, */*",
