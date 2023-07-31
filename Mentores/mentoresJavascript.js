@@ -2,6 +2,7 @@ const novoMentor = () => {
     window.location= "./novoMentor.html"
 }
 
+// Função que exibe os mentores na tabela
 const mostrarMentores = (mentores) => {
     const tabelaCorpo = document.getElementById('tabelaCorpo');
     tabelaCorpo.innerHTML = ''; 
@@ -29,6 +30,7 @@ const mostrarMentores = (mentores) => {
     });
 };
 
+// Função assíncrona para obter todas os mentores
 const pegarMentores = async () => {
     try {
         const apiResponse = await fetch('https://api-projetofinal-md1.onrender.com/Mentores');
@@ -39,36 +41,41 @@ const pegarMentores = async () => {
     }
 };
 
+// Função para redirecionar para a página de edição de mentor com o ID do mentor a ser editado
 const editarMentor = (id) => {
-    window.location = `./editarMentor.html?id=${id}`
-}
+    window.location = `./editarMentor.html?id=${id}`;
+};
 
+// Função assíncrona para excluir um mentor pelo ID
 const excluirMentor = async (id) => {
-    await fetch(`https://api-projetofinal-md1.onrender.com/Mentores/${id}`, { method: 'DELETE' })
-    pegarMentores()
-}
+    await fetch(`https://api-projetofinal-md1.onrender.com/Mentores/${id}`, { method: 'DELETE' });
+    pegarMentores();
+};
 
+// Função assíncrona para buscar e exibir mentores filtrados na tabela
 const buscarMentores = async () => {
     const entrada = document.getElementById("barradePesquisa");
     const consulta = entrada.value.toLowerCase();
 
     try {
-      const respostaApi = await fetch("https://api-projetofinal-md1.onrender.com/Mentores");
-      const mentores = await respostaApi.json();
+        const respostaApi = await fetch("https://api-projetofinal-md1.onrender.com/Mentores");
+        const mentores = await respostaApi.json();
 
-      const mentoresFiltrados = mentores.filter(
-        (mentor) =>
-          mentor.nome.toLowerCase().includes(consulta) ||
-          mentor.email.toLowerCase().includes(consulta)
-      );
+        const mentoresFiltrados = mentores.filter(
+            (mentor) =>
+            mentor.nome.toLowerCase().includes(consulta) ||
+            mentor.email.toLowerCase().includes(consulta)
+        );
 
-      mostrarMentores(mentoresFiltrados);
+        mostrarMentores(mentoresFiltrados);
     } catch (erro) {
-      console.error("Erro ao buscar mentores:", erro);
+        console.error("Erro ao buscar mentores:", erro);
     }
-  };
+};
 
-  const elementoInput = document.getElementById("barradePesquisa");
-  elementoInput.addEventListener("input", buscarMentores);
+// Adiciona um listener para o evento de "input" no campo de pesquisa para buscar mentores
+const elementoInput = document.getElementById("barradePesquisa");
+elementoInput.addEventListener("input", buscarMentores);
 
-  pegarMentores();
+// Chama a função para exibir todos os mentores ao carregar a página
+pegarMentores();

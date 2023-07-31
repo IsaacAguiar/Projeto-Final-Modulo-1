@@ -6,6 +6,7 @@ const editarMentoria = (mentoriaId) => {
     window.location = `./editarMentoria.html?id=${mentoriaId}`;
 };
 
+// Função que exibe as mentorias na tabela
 const mostrarMentorias = (mentorias) => {
     const tabelaCorpo = document.getElementById('tabelaCorpo');
     tabelaCorpo.innerHTML = ''; 
@@ -36,6 +37,7 @@ const mostrarMentorias = (mentorias) => {
     });
 };
 
+// Função assíncrona para obter todas as mentorias
 const pegarMentorias = async () => {
     try {
         const apiResponse = await fetch('https://api-projetofinal-md1.onrender.com/Mentorias');
@@ -46,33 +48,37 @@ const pegarMentorias = async () => {
     }
 };
 
+// Função assíncrona para excluir uma mentoria pelo ID
 const excluirMentoria = async (id) => {
-    await fetch(`https://api-projetofinal-md1.onrender.com/Mentorias/${id}`, { method: 'DELETE' })
-    pegarMentorias()
-}
+    await fetch(`https://api-projetofinal-md1.onrender.com/Mentorias/${id}`, { method: 'DELETE' });
+    pegarMentorias();
+};
 
+// Função assíncrona para buscar e exibir mentorias filtradas na tabela
 const buscarMentorias = async () => {
     const entrada = document.getElementById("barradePesquisa");
     const consulta = entrada.value.toLowerCase();
 
     try {
-      const respostaApi = await fetch("https://api-projetofinal-md1.onrender.com/Mentorias");
-      const mentorias = await respostaApi.json();
+        const respostaApi = await fetch("https://api-projetofinal-md1.onrender.com/Mentorias");
+        const mentorias = await respostaApi.json();
 
-      const mentoriasFiltradas = mentorias.filter(
-        (mentoria) =>
-          mentoria.titulo.toLowerCase().includes(consulta) ||
-          mentoria.mentor.toLowerCase().includes(consulta) ||
-          mentoria.status.toLowerCase().includes(consulta)
-      );
+        const mentoriasFiltradas = mentorias.filter(
+            (mentoria) =>
+            mentoria.titulo.toLowerCase().includes(consulta) ||
+            mentoria.mentor.toLowerCase().includes(consulta) ||
+            mentoria.status.toLowerCase().includes(consulta)
+        );
 
-      mostrarMentorias(mentoriasFiltradas);
+        mostrarMentorias(mentoriasFiltradas);
     } catch (erro) {
-      console.error("Erro ao buscar mentorias:", erro);
+        console.error("Erro ao buscar mentorias:", erro);
     }
 };
 
+// Adiciona um evento de input ao campo de pesquisa para buscar mentorias
 const elementoInput = document.getElementById("barradePesquisa");
 elementoInput.addEventListener("input", buscarMentorias);
 
+// Chama a função para exibir todas as mentorias ao carregar a página
 pegarMentorias();

@@ -3,10 +3,12 @@ const novaTurma = () => {
 };
 
 const editarTurma = (turmaId) => {
+    // Redireciona o usuário para a página de edição da turma com o ID específico
     window.location = `./editarTurma.html?id=${turmaId}`;
 };
 
 const excluirTurma = async (id) => {
+    // Função para excluir uma turma específica pelo seu ID
     await fetch(`https://api-projetofinal-md1.onrender.com/Turmas/${id}`, { method: 'DELETE' });
     pegarTurmas();
 };
@@ -14,9 +16,10 @@ const excluirTurma = async (id) => {
 // Função para exibir as turmas/mentorias na tabela
 const mostrarTurmas = (turmas) => {
     const tabelaCorpo = document.getElementById('tabelaCorpo');
-    tabelaCorpo.innerHTML = ''; 
+    tabelaCorpo.innerHTML = ''; // Limpa o conteúdo da tabela antes de adicionar as turmas
 
     turmas.forEach((turma) => {
+        // Cria uma string HTML que representa uma linha da tabela para cada turma
         const turmaHtml = `
             <tr style="border: 0px none; border-radius: 8px;">
                 <td>${turma.turma}</td>
@@ -45,31 +48,32 @@ const mostrarTurmas = (turmas) => {
     });
 };
 
-// Função para pegar as turmas/mentorias do servidor Json
+// Função para pegar as turmas/mentorias do servidor JSON
 const pegarTurmas = async () => {
     try {
         const apiResponse = await fetch('https://api-projetofinal-md1.onrender.com/Turmas');
         const turmas = await apiResponse.json();
-        mostrarTurmas(turmas);
+        mostrarTurmas(turmas); // Exibe as turmas na tabela após obtê-las do servidor
     } catch (error) {
         console.error('Erro ao buscar turmas:', error);
     }
 };
 
 const buscarTurmas = async () => {
+    // Função para buscar turmas a partir do texto digitado na barra de pesquisa
     const entrada = document.getElementById("barradePesquisa");
     const consulta = entrada.value.toLowerCase();
 
     try {
         const apiResponse = await fetch(`https://api-projetofinal-md1.onrender.com/Turmas?turma_like=${consulta}`);
         const turmasFiltradas = await apiResponse.json();
-        mostrarTurmas(turmasFiltradas);
+        mostrarTurmas(turmasFiltradas); // Exibe as turmas filtradas na tabela
     } catch (erro) {
         console.error("Erro ao buscar turmas:", erro);
     }
 };
 
 const elementoInput = document.getElementById("barradePesquisa");
-elementoInput.addEventListener("input", buscarTurmas);
+elementoInput.addEventListener("input", buscarTurmas); // Adiciona o evento para chamar a função de busca ao digitar
 
-pegarTurmas();
+pegarTurmas();// Carrega e exibe as turmas quando a página é carregada

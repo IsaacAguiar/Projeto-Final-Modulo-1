@@ -2,10 +2,12 @@ const novoAluno = () => {
     window.location = "./novoAluno.html";
 }
 
+// Função para redirecionar para a página de edição de aluno com o ID do aluno a ser editado
 const editarAluno = (alunoId) => {
     window.location = `./editarAluno.html?id=${alunoId}`;
 }
 
+// Função que exibe os alunos na tabela
 const mostrarAlunos = (alunos) => {
     const tabelaCorpo = document.getElementById("tabelaCorpo");
     tabelaCorpo.innerHTML = ""
@@ -33,6 +35,7 @@ const mostrarAlunos = (alunos) => {
     })
 }
 
+// Função assíncrona para obter todas os alunos
 const pegarAlunos = async () => {
     try {
         const apiResponse = await fetch("https://api-projetofinal-md1.onrender.com/Alunos");
@@ -41,13 +44,15 @@ const pegarAlunos = async () => {
     } catch (error) {
         console.error("Erro ao buscar alunos:", error);
     }
-}
+};
 
+// Função assíncrona para excluir um aluno pelo ID
 const excluirAluno = async (id) => {
     await fetch(`https://api-projetofinal-md1.onrender.com/Alunos/${id}`, { method: "DELETE" });
     pegarAlunos();
-}
+};
 
+// Função assíncrona para buscar e exibir alunos filtrados na tabela
 const buscarAlunos = async () => {
     const entrada = document.getElementById("barradePesquisa");
     const consulta = entrada.value.toLowerCase();
@@ -59,10 +64,11 @@ const buscarAlunos = async () => {
     } catch (erro) {
         console.error("Erro ao buscar alunos:", erro);
     }
-}
+};
 
-
+// Adiciona um listener para o evento de "input" no campo de pesquisa para buscar alunos
 const elementoInput = document.getElementById("barradePesquisa");
 elementoInput.addEventListener("input", buscarAlunos);
 
-pegarAlunos()
+// Chama a função para exibir todos os alunos ao carregar a página
+pegarAlunos();
