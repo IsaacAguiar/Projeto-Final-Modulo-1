@@ -4,5 +4,4 @@
       { "source": "/estiloLogin.css", "destination": "/Tela de Login/estiloLogin.css" },
       { "source": "/app.js", "destination": "/Tela de Login/app.js" }
     ]
-  }
-  
+}
